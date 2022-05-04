@@ -30,5 +30,24 @@ if __name__ == "__main__":
 
   print(f'Found {len(videos)} videos')
 
+  print("Parsing the first video")
+  #title, url, thumbnail, channel name, views, uploaded date and description
+  video = videos[0]
+  title_tag = video.find_element(By.ID, 'video-title')
+  title = title_tag.text
+  url = title_tag.get_attribute('href')
+  
+  thumbnail_tag = video.find_element(By.TAG_NAME, 'img')
+  thumbnail_url = thumbnail_tag.get_attribute('src')
+  
+  channel_tag = video.find_elements(By.ID, 'img')
+  #channel = channel_tag.text
+  #views = video.get_attribute('span')
+  print('Title is ', title)
+  print('URL is ', url)
+  print('Thumbnail is ', thumbnail_url)
+  #print('Channel is ', channel)
+  
+
   
   

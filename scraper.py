@@ -40,14 +40,24 @@ if __name__ == "__main__":
   thumbnail_tag = video.find_element(By.TAG_NAME, 'img')
   thumbnail_url = thumbnail_tag.get_attribute('src')
   
-  channel_tag = video.find_elements(By.ID, 'img')
-  #channel = channel_tag.text
-  #views = video.get_attribute('span')
-  print('Title is ', title)
-  print('URL is ', url)
-  print('Thumbnail is ', thumbnail_url)
-  #print('Channel is ', channel)
+  channel_div = video.find_element(By.CLASS_NAME, 'ytd-channel-name')
+  channel = channel_div.text
   
+  description_tag = video.find_element(By.ID, 'description-text')
+  description = description_tag.text
+  
+  views_tag= video.find_element(By.ID, 'metadata-line').text
+  views = views_tag 
+  #uploaded = views_tag[1]
+  
+  print('Title : ', title)
+  print('URL : ', url)
+  print('Thumbnail URL : ', thumbnail_url)
+  print('Channel Name : ', channel)
+  print('Description : ', description)
+  print('Views : ', views_tag)
+  #print('Uploaded Date : ', uploaded)
+
 
   
   

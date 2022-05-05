@@ -46,17 +46,16 @@ if __name__ == "__main__":
   description_tag = video.find_element(By.ID, 'description-text')
   description = description_tag.text
   
-  views_tag= video.find_element(By.ID, 'metadata-line').text
-  views = views_tag 
-  #uploaded = views_tag[1]
+  views= video.find_element(By.XPATH, '//*[@id="metadata-line"]/span[1]').text
+  uploaded = video.find_element(By.XPATH, '//*[@id="metadata-line"]/span[2]').text
   
   print('Title : ', title)
   print('URL : ', url)
   print('Thumbnail URL : ', thumbnail_url)
   print('Channel Name : ', channel)
   print('Description : ', description)
-  print('Views : ', views_tag)
-  #print('Uploaded Date : ', uploaded)
+  print('Views : ', views)
+  print('Uploaded  : ', uploaded)
 
 
   

@@ -7,6 +7,7 @@ authors = ["dsarojam2021 <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 selenium = "^4.1.3"
+pandas = "^1.4.2"
 
 [tool.poetry.dev-dependencies]
 
